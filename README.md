@@ -10,7 +10,7 @@
 
 
 
-![教务系统](http://wx3.sinaimg.cn/large/a27af0cbly1fkj5tieci8j20fb0ciwf7.jpg)
+![教务系统](http://wx3.sinaimg.cn/mw690/a27af0cbly1fkj5tieci8j20fb0ciwf7.jpg)
 
 
 
