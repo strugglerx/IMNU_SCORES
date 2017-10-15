@@ -124,7 +124,7 @@ def main():
        
     n=0    
     for n in range(0,len(grade)):
-        #print(grade[n])入库操作
+        print(grade[n])#入库操作
         #db (stu_id,index(),grade[n],1)
         sql = "insert into score(student_id,name,k_name,k_xuefen,k_kechen,k_score) values('{}','{}','{}','{}','{}','{}') ".format(stu_id,index(),name[n],xuefen[n],kechen[n],score[n])
         cursor.execute(sql)#执行sql语句
