@@ -12,15 +12,7 @@ cursor = db.cursor()
 header = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
     }
-'''
-def db(stu_id,name,grade,gpa):
-    db = pymysql.connect(host='localhost',port=3307,user='root',passwd='usbw',db='score',charset='utf8')
-    cursor = db.cursor()
-    sql = "insert into score(student_id,name,score,gpa) values('{}','{}','{}','{}') ".format(stu_id,name,grade,gpa)
-    cursor.execute(sql)#执行sql语句
-    db.commit()
-    db.close()
-'''
+
 def index_post(name,password):
     data = {
     'username': str(name),
@@ -30,7 +22,6 @@ def index_post(name,password):
     }
     
     r = s.post('http://eip.imnu.edu.cn/EIP/syt/login/Login.htm', data,headers=header)
-    #print(r.url)
     
 def index():
     r = s.get('http://eip.imnu.edu.cn:80/EIP/sytsso/other.htm?appId=NEWJWXT&uuid=ff8080815742d0ba015742d54b710004')
@@ -125,15 +116,12 @@ def main():
     n=0    
     for n in range(0,len(grade)):
         print(grade[n])#入库操作
-        #db (stu_id,index(),grade[n],1)
         sql = "insert into score(student_id,name,k_name,k_xuefen,k_kechen,k_score) values('{}','{}','{}','{}','{}','{}') ".format(stu_id,index(),name[n],xuefen[n],kechen[n],score[n])
         cursor.execute(sql)#执行sql语句
         db.commit()
      
     gpa_=gpa(name,kechen,xuefen,score)    
     print('你的gpa为:%s'%gpa_) 
-    #db (index(),name,gpa_)
-    #print(r.url)
     
 #-------------------------------------优化优化---------------------------#
 if __name__=='__main__':
