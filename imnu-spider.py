@@ -129,7 +129,7 @@ def main():
         sql = "insert into score(student_id,name,k_name,k_xuefen,k_kechen,k_score) values('{}','{}','{}','{}','{}','{}') ".format(stu_id,index(),name[n],xuefen[n],kechen[n],score[n])
         cursor.execute(sql)#执行sql语句
         db.commit()
-        #print('%s已入库'%name[n])
+     
     gpa_=gpa(name,kechen,xuefen,score)    
     print('你的gpa为:%s'%gpa_) 
     #db (index(),name,gpa_)
